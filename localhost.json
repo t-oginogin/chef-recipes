@@ -1,0 +1,10 @@
+// localhost.json
+{
+  "run_list" : [
+    "recipe[git]"
+  ],
+  "git": {
+    "version": "1.8.4",
+    "source_uri": "https://git-core.googlecode.com/files/git-1.8.4.tar.gz"
+  }
+}
