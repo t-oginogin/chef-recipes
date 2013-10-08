@@ -1,10 +1,16 @@
 // localhost.json
 {
   "run_list" : [
-    "recipe[git]"
+    "recipe[git]",
+    "recipe[rvm]"
   ],
+
   "git": {
     "version": "1.8.4",
     "source_uri": "https://git-core.googlecode.com/files/git-1.8.4.tar.gz"
+  },
+
+  "rvm": {
+    "ruby_version": "2.0.0"
   }
 }
