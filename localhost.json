@@ -4,6 +4,7 @@
     "recipe[git]",
     "recipe[rvm]",
     "recipe[vim]",
+    "recipe[mysql]",
     "recipe[mysql]"
   ],
 
