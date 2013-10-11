@@ -2,7 +2,8 @@
 {
   "run_list" : [
     "recipe[git]",
-    "recipe[rvm]"
+    "recipe[rvm]",
+    "recipe[vim]"
   ],
 
   "git": {
