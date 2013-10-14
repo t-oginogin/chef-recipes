@@ -5,7 +5,7 @@
     "recipe[rvm]",
     "recipe[vim]",
     "recipe[mysql]",
-    "recipe[mysql]"
+    "recipe[gcc]"
   ],
 
   "git": {
