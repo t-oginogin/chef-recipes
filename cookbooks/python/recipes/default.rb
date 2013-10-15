@@ -12,6 +12,10 @@ install_dir = '/usr/local/src'
 source_url = node['python']['source_url']
 version = node['python']['version']
 
+package "bzip2-devel" do
+  :install
+end
+
 # python
 remote_file "#{Chef::Config[:file_cache_path]}/Python-#{version}.tar.bz2" do
   not_if "test -e #{Chef::Config[:file_cache_path]}/Python-#{version}.tar.bz2"
