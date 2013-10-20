@@ -6,7 +6,8 @@
     "recipe[vim]",
     "recipe[mysql]",
     "recipe[gcc]",
-    "recipe[python]"
+    "recipe[python]",
+    "recipe[nginx]"
   ],
 
   "git": {

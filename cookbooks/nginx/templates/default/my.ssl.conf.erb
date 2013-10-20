@@ -1,0 +1,30 @@
+upstream <%= @application_name %> {
+  server unix:/var/www/<%= @application_name %>/tmp/sockets/unicorn.sock;
+}
+
+server {
+  listen 443;
+  listen *:<%= @server_port %>;
+  server_name <%= @server_name %>;
+
+  ssl                 on;
+  ssl_certificate     /etc/nginx/ssl_certfile/server.crt;
+  ssl_certificate_key /etc/nginx/ssl_certfile/server.key;
+  ssl_protocols       SSLv3 TLSv1;
+  ssl_ciphers         HIGH:!ADH:!MD5; 
+
+  location / {
+    try_files $uri $uri/index.html $uri.html @<%= @application_name %>;
+  }
+
+  location @<%= @application_name %> {
+    proxy_read_timeout    300;
+    proxy_connect_timeout 300;
+    proxy_redirect        off;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header Host              $http_host; 
+    proxy_set_header X-Real-IP         $remote_addr; 
+
+    proxy_pass http://<%= @application_name %>;
+  }
+}    

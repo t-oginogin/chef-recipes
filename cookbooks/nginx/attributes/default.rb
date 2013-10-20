@@ -1,0 +1,9 @@
+default['nginx']['version']    = '1.4.3-1'
+default['nginx']['source_url'] = 'http://nginx.org/packages/centos/5/i386/RPMS/nginx-1.4.3-1.el5.ngx.i386.rpm'
+default['nginx']['packages']   = %w[pcre pcre-devel]
+default['nginx']['centos_version'] = '5'
+default['nginx']['cpu']        = 'i386'
+default['nginx']['server_name'] = 'localhost'
+default['nginx']['server_port'] = '3000'
+default['nginx']['application_name'] = 'sample_app'
+default['nginx']['template'] = 'my.conf.erb'
